@@ -1,301 +1,609 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sujal Ramani — Full-Stack Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#0f1724;
-  --card:#0b1220;
-  --muted:#94a3b8;
-  --accent:#60a5fa;
-  --accent-2:#7c3aed;
-  --accent-3:#facc15;
-  --glass: rgba(255,255,255,0.04);
-  --max-width:1100px;
-  color-scheme: dark;
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
-  background:var(--bg);
-  color:#e6eef8;
-  line-height:1.48;
-  padding-bottom:60px;
-  scroll-behavior:smooth;
-}
-.container{max-width:var(--max-width);margin:0 auto;padding:28px}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Sujal Ramani — Full-Stack Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #94a3b8;
+      --accent: #60a5fa;
+      --accent-2: #7c3aed;
+      --accent-3: #facc15;
+      --glass: rgba(255, 255, 255, 0.04);
+      --max-width: 1100px;
+      color-scheme: dark;
+    }
 
-/* NAV */
-header{position:sticky;top:12px;z-index:50}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-radius:12px;background:rgba(15,23,36,0.8)}
-.brand{display:flex;gap:12px;align-items:center}
-.logo{width:44px;height:44px;border-radius:8px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));font-weight:700;color:#021126}
-.brand h1{font-size:1rem;margin:0}
-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:14px}
-nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600;transition:all 0.25s ease;}
-nav a:hover{color:#fff;background:var(--glass)}
-.cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:8px 12px;border-radius:10px;color:#021126;text-decoration:none;font-weight:700;transition:all 0.25s ease;}
-.cta:hover{transform:scale(1.05);background:linear-gradient(90deg,var(--accent-2),var(--accent))}
+    * {
+      box-sizing: border-box
+    }
 
-/* HERO */
-.hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;margin:28px 0}
-.eyebrow{color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:1px}
-h2{margin:8px 0 12px;font-size:2rem;line-height:1.3}
-p.lead{color:var(--muted);margin:0 0 18px}
-.skills-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.skill-pill{padding:8px 12px;border-radius:999px;font-weight:600;font-size:.86rem;color:#fff;
-  background:linear-gradient(135deg,var(--accent),var(--accent-2));
-  transition:transform 0.25s ease;}
-.skill-pill:hover{transform:scale(1.05)}
+    html,
+    body {
+      height: 100%
+    }
 
-/* Card & profile */
-.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;box-shadow:0 6px 30px rgba(2,6,23,0.6);transition:all 0.3s ease;}
-.card:hover{box-shadow:0 12px 40px rgba(96,165,250,0.3);transform:translateY(-4px);}
-.profile{display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center}
-.profile img{width:100%;max-width:240px;border-radius:12px;border:3px solid rgba(255,255,255,0.04)}
-.meta{font-size:.92rem;color:var(--muted)}
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: #e6eef8;
+      line-height: 1.48;
+      padding-bottom: 60px;
+      scroll-behavior: smooth;
+    }
 
-/* SECTIONS */
-section{margin:24px 0;opacity:0;transform:translateY(20px);transition:all 0.8s ease;}
-section.visible{opacity:1;transform:translateY(0);}
-h3{font-size:1.2rem;margin:0 0 12px}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 28px
+    }
 
-/* Projects */
-.project{position:relative;display:flex;flex-direction:column;gap:12px;overflow:hidden;border-radius:12px;cursor:pointer;transition:all 0.3s ease;}
-.project img{width:100%;height:180px;object-fit:cover;border-radius:12px;transition:transform 0.3s ease;}
-.project:hover img{transform:scale(1.05);}
-.project .tags{display:flex;gap:8px;flex-wrap:wrap}
-.tag{background:linear-gradient(135deg,var(--accent-3),var(--accent));padding:6px 8px;border-radius:8px;font-weight:600;font-size:.82rem;color:#021126}
-.project-overlay{
-  position:absolute;inset:0;background:rgba(0,0,0,0.5);color:#fff;display:flex;align-items:center;justify-content:center;opacity:0;font-weight:600;font-size:1rem;transition:opacity 0.3s ease;border-radius:12px;
-}
-.project:hover .project-overlay{opacity:1}
+    /* NAV */
+    header {
+      position: sticky;
+      top: 12px;
+      z-index: 50
+    }
 
-/* Skill bars */
-.skill-bar{background:rgba(255,255,255,0.05);border-radius:999px;height:20px;margin-bottom:8px;overflow:hidden}
-.skill-fill{height:100%;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent-2));text-align:right;padding-right:6px;font-size:.75rem;color:#fff;transition:width 0.8s ease}
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(15, 23, 36, 0.8)
+    }
 
-/* Contact form */
-form{display:flex;flex-direction:column;gap:12px}
-input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:inherit}
-input:focus,textarea:focus{outline:2px solid rgba(96,165,250,0.2);border-color:rgba(96,165,250,0.3)}
-button{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;padding:10px 14px;border-radius:10px;color:#021126;font-weight:700;cursor:pointer;transition:transform 0.25s ease;}
-button:hover{transform:scale(1.05)}
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center
+    }
 
-footer{margin-top:28px;color:var(--muted);font-size:.86rem;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      font-weight: 700;
+      color: #021126
+    }
 
-/* Media */
-@media (max-width:980px){.hero{grid-template-columns:1fr;} nav ul{display:none;}}
-@media (max-width:520px){.grid-2{grid-template-columns:1fr} .project img{height:160px}}
-</style>
+    .brand h1 {
+      font-size: 1rem;
+      margin: 0
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 14px
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+
+    nav a:hover {
+      color: #fff;
+      background: var(--glass)
+    }
+
+    .cta {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      padding: 8px 12px;
+      border-radius: 10px;
+      color: #021126;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.25s ease;
+    }
+
+    .cta:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, var(--accent-2), var(--accent))
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 28px;
+      align-items: center;
+      margin: 28px 0
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px
+    }
+
+    h2 {
+      margin: 8px 0 12px;
+      font-size: 2rem;
+      line-height: 1.3
+    }
+
+    p.lead {
+      color: var(--muted);
+      margin: 0 0 18px
+    }
+
+    .skills-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px
+    }
+
+    .skill-pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: .86rem;
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      transition: transform 0.25s ease;
+    }
+
+    .skill-pill:hover {
+      transform: scale(1.05)
+    }
+
+    /* Card & profile */
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: 0 6px 30px rgba(2, 6, 23, 0.6);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 40px rgba(96, 165, 250, 0.3);
+      transform: translateY(-4px);
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      text-align: center
+    }
+
+    .profile img {
+      width: 100%;
+      max-width: 240px;
+      border-radius: 12px;
+      border: 3px solid rgba(255, 255, 255, 0.04)
+    }
+
+    .meta {
+      font-size: .92rem;
+      color: var(--muted)
+    }
+
+    /* SECTIONS */
+    section {
+      margin: 24px 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin: 0 0 12px
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px
+    }
+
+    /* Projects */
+    .project {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .project img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover img {
+      transform: scale(1.05);
+    }
+
+    .project .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .tag {
+      background: linear-gradient(135deg, var(--accent-3), var(--accent));
+      padding: 6px 8px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: .82rem;
+      color: #021126
+    }
+    
+
+    /* Skill bars */
+    .skill-bar {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 999px;
+      height: 20px;
+      margin-bottom: 8px;
+      overflow: hidden
+    }
+
+    .skill-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      text-align: right;
+      padding-right: 6px;
+      font-size: .75rem;
+      color: #fff;
+      transition: width 0.8s ease
+    }
+
+    /* Contact form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px
+    }
+
+    input,
+    textarea {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 10px;
+      border-radius: 8px;
+      color: inherit
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: 2px solid rgba(96, 165, 250, 0.2);
+      border-color: rgba(96, 165, 250, 0.3)
+    }
+
+    button {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      border: none;
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: #021126;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.25s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05)
+    }
+
+    footer {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: .86rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px
+    }
+
+    /* Media */
+    @media (max-width:980px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      nav ul {
+        display: none;
+      }
+    }
+
+    @media (max-width:520px) {
+      .grid-2 {
+        grid-template-columns: 1fr
+      }
+
+      .project img {
+        height: 160px
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div class="container">
-  <header>
-    <div class="nav">
-      <div class="brand">
-        <div class="logo">SR</div>
-        <div>
-          <h1>Sujal Ramani</h1>
-          <div class="meta">Full-Stack Software Engineer — Regina, SK</div>
+  <div class="container">
+    <header>
+      <div class="nav">
+        <div class="brand">
+          <div class="logo">SR</div>
+          <div>
+            <h1>Sujal Ramani</h1>
+            <div class="meta">Full-Stack Software Engineer — Regina, SK</div>
+          </div>
         </div>
-      </div>
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <a class="cta" href="#contact">Hire / Contact</a>
-    </div>
-  </header>
-
-  <main>
-    <section id="home" class="hero">
-      <div>
-        <div class="eyebrow">Hi — I'm Sujal 👋</div>
-        <h2>Full-Stack Software Engineer focused on web apps, developer tooling & AI-assisted workflows.</h2>
-        <p class="lead">I build responsive, accessible, and maintainable web applications using modern JavaScript frameworks and reliable backend services. Studying Computer Systems Technology at Saskatchewan Polytechnic and seeking opportunities to contribute to web platforms.</p>
-
-        <div class="skills-row">
-          <div class="skill-pill">React</div>
-          <div class="skill-pill">Angular</div>
-          <div class="skill-pill">TypeScript</div>
-          <div class="skill-pill">Node.js</div>
-          <div class="skill-pill">MongoDB</div>
-          <div class="skill-pill">Figma</div>
-        </div>
-      </div>
-
-      <aside class="card profile">
-        <img src="./a.jpeg" alt="Profile Image">
-        <div>
-          <div style="font-weight:700">Sujal Ramani</div>
-          <div class="meta">Regina, Saskatchewan • ramanisujal314@gmail.com • +1 (639) 590-7753</div>
-        </div>
-        <div style="display:flex;gap:10px;margin-top:8px">
-          <a class="tag" href="#projects">View Projects</a>
-          <a class="tag" href="#contact">Contact</a>
-        </div>
-        <div style="margin-top:10px;color:var(--muted);font-size:.86rem">Author: Sujal Ramani — Last edited: November 17, 2025</div>
-      </aside>
-    </section>
-
-    <section id="about" class="card">
-      <h3>About</h3>
-      <div class="grid-2">
-        <div>
-          <p>I am a Full-Stack Software Engineer with experience building scalable web applications using React, Angular, TypeScript, Node.js, Python, and Java.</p>
-          <h4 style="margin-top:12px">Career Goals</h4>
-          <p class="meta">Contribute to developer productivity tooling and modern web platforms; build developer-centric systems that improve efficiency and quality.</p>
-          <h4 style="margin-top:12px">Education</h4>
-          <p class="meta">Diploma — Computer Systems Technology (Saskatchewan Polytechnic, 2024–2026)</p>
-        </div>
-        <div>
-          <h4>Quick Facts</h4>
-          <ul style="margin:6px 0 0 18px;color:var(--muted)">
-            <li>Full-Stack JavaScript & TypeScript</li>
-            <li>Databases: MongoDB, SQL, Firebase</li>
-            <li>Design: Figma, Adobe XD</li>
-            <li>Recognized at national hackathons</li>
+        <nav aria-label="Primary">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
-        </div>
+        </nav>
+        <a class="cta" href="#contact">Hire / Contact</a>
       </div>
-    </section>
+    </header>
 
-    <section id="skills" class="card">
-      <h3>Skills & Experience</h3>
-      <div class="grid-2">
+    <main>
+      <section id="home" class="hero">
         <div>
-          <h4>Technical Skills</h4>
-          <p class="meta">Frontend: React, Angular, TypeScript, HTML, CSS</p>
-          <p class="meta">Backend: Node.js, Python, Java</p>
-          <p class="meta">Databases: MongoDB, SQL, Firebase</p>
-          <p class="meta">Tools: Git/GitHub, workflow automation, AI-assisted development</p>
+          <div class="eyebrow">Hi — I'm Sujal 👋</div>
+          <h2>Full-Stack Software Engineer focused on web apps, developer tooling & AI-assisted workflows.</h2>
+          <p class="lead">I build responsive, accessible, and maintainable web applications using modern JavaScript
+            frameworks and reliable backend services. Studying Computer Systems Technology at Saskatchewan Polytechnic
+            and seeking opportunities to contribute to web platforms.</p>
 
-          <h4 style="margin-top:12px">Skill Levels</h4>
-          <div class="skill-bar"><div class="skill-fill" style="width:90%">React 90%</div></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:80%">Angular 80%</div></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:85%">TypeScript 85%</div></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:80%">Node.js 80%</div></div>
-          <div class="skill-bar"><div class="skill-fill" style="width:75%">MongoDB 75%</div></div>
+          <div class="skills-row">
+            <div class="skill-pill">React</div>
+            <div class="skill-pill">Angular</div>
+            <div class="skill-pill">TypeScript</div>
+            <div class="skill-pill">Node.js</div>
+            <div class="skill-pill">MongoDB</div>
+            <div class="skill-pill">Figma</div>
+          </div>
         </div>
-        <div>
-          <h4>Professional Experience</h4>
-          <p class="meta"><strong>Vijayho®</strong> — Full-Time Web Dev Intern (Aug 2023 – Jul 2024)</p>
-          <p class="meta"><strong>Syphnosys Technology</strong> — Part-Time Web Developer (Aug 2020 – Aug 2023)</p>
+
+        <aside class="card profile">
+          <img src=".//Profile/Photo.jpeg" alt="Profile Image">
+          <div>
+            <div style="font-weight:700">Sujal Ramani</div>
+            <div class="meta">Regina, Saskatchewan • ramanisujal314@gmail.com • +1 (639) 590-7753</div>
+          </div>
+          <div style="display:flex;gap:10px;margin-top:8px">
+            <a class="tag" href="#projects">View Projects</a>
+            <a class="tag" href="#contact">Contact</a>
+          </div>
+          <div style="margin-top:10px;color:var(--muted);font-size:.86rem">Author: Sujal Ramani — Last edited: November
+            17, 2025</div>
+        </aside>
+      </section>
+
+      <section id="about" class="card">
+        <h3>About</h3>
+        <div class="grid-2">
+          <div>
+            <p>I am a Full-Stack Software Engineer with experience building scalable web applications using React,
+              Angular, TypeScript, Node.js, Python, and Java.</p>
+            <h4 style="margin-top:12px">Career Goals</h4>
+            <p class="meta">Contribute to developer productivity tooling and modern web platforms; build
+              developer-centric systems that improve efficiency and quality.</p>
+            <h4 style="margin-top:12px">Education</h4>
+            <p class="meta">Diploma — Computer Systems Technology (Saskatchewan Polytechnic, 2024–2026)</p>
+          </div>
+          <div>
+            <h4>Quick Facts</h4>
+            <ul style="margin:6px 0 0 18px;color:var(--muted)">
+              <li>Full-Stack JavaScript & TypeScript</li>
+              <li>Databases: MongoDB, SQL, Firebase</li>
+              <li>Design: Figma, Adobe XD</li>
+              <li>Recognized at national hackathons</li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="projects" class="card">
-      <h3>Projects</h3>
+      <section id="skills" class="card">
+        <h3>Skills & Experience</h3>
+        <div class="grid-2">
+          <div>
+            <h4>Technical Skills</h4>
+            <p class="meta">Frontend: React, Angular, TypeScript, HTML, CSS</p>
+            <p class="meta">Backend: Node.js, Python, Java</p>
+            <p class="meta">Databases: MongoDB, SQL, Firebase</p>
+            <p class="meta">Tools: Git/GitHub, workflow automation, AI-assisted development</p>
 
-      <article class="project">
-        <h4>File Tracking System — Gandhinagar Municipal Corporation</h4>
-        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop" alt="">
-        <div class="tags">
-          <span class="tag">React</span>
-          <span class="tag">MongoDB</span>
-          <span class="tag">Bootstrap</span>
-          <span class="tag">Team Lead</span>
+            <h4 style="margin-top:12px">Skill Levels</h4>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width:90%">React 90%</div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width:80%">Angular 80%</div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width:85%">TypeScript 85%</div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width:80%">Node.js 80%</div>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-fill" style="width:75%">MongoDB 75%</div>
+            </div>
+          </div>
+          <div>
+            <h4>Professional Experience</h4>
+            <p class="meta"><strong>Vijayho®</strong> — Full-Time Web Dev Intern (Aug 2023 – Jul 2024)</p>
+            <p class="meta"><strong>Syphnosys Technology</strong> — Part-Time Web Developer (Aug 2020 – Aug 2023)</p>
+          </div>
         </div>
-        <div class="project-overlay">Secure tracking system, led a 4-member team</div>
-      </article>
+      </section>
 
-      <article class="project">
-        <h4>Internal Tools & Dashboards — Vijayho®</h4>
-        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1600&auto=format&fit=crop" alt="">
-        <div class="tags">
-          <span class="tag">TypeScript</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">Firebase</span>
-          <span class="tag">Automation</span>
-        </div>
-        <div class="project-overlay">Improved productivity with dashboards & automation scripts</div>
-      </article>
+      <section id="projects" class="card">
+        <h3>Projects</h3>
 
-      <article class="project">
-        <h4>Project Horizon — Final Year Project</h4>
-        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981d?q=80&w=1600&auto=format&fit=crop" alt="">
-        <div class="tags">
-          <span class="tag">Full-Stack</span>
-          <span class="tag">System Design</span>
-          <span class="tag">Leadership</span>
-        </div>
-        <div class="project-overlay">Ranked 1st in batch for design, architecture & scalability</div>
-      </article>
-    </section>
-
-    <section id="contact" class="card">
-      <h3>Contact</h3>
-      <div class="grid-2">
-        <div>
-          <p class="meta">Open to internships, co-op placements, and full-time roles. Reach out to collaborate or discuss opportunities.</p>
-          <ul style="margin:8px 0 0 18px;color:var(--muted)">
-            <li><strong>Email:</strong> <a href="mailto:ramanisujal314@gmail.com">ramanisujal314@gmail.com</a></li>
-            <li><strong>Phone:</strong> +1 (639) 590-7753</li>
-            <li><strong>Location:</strong> Regina, Saskatchewan</li>
-            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sujal-ramani/" target="_blank">linkedin.com/in/sujal-ramani</a></li>
-            <li><strong>GitHub:</strong> <a href="https://github.com/Sujal-Ramani" target="_blank">github.com/sujalramani</a></li>
+        <article class="project">
+          <h1>File Tracking System — Gandhinagar Municipal Corporation</h1>
+          <img src="./FtsPng/Home.png" alt="">
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">UI/UX Design</span>
+          </div>
+          <ul>
+            <li>The File Tracking System is a secure, browser-based solution designed to digitalize file movement inside
+              government departments.</li>
+            <li>It allows officers to log, update, and track physical documents in real time, reducing delays and manual
+              follow-ups.</li>
+            <li>The system includes user authentication, automated status updates, and an intuitive dashboard for
+              monitoring workflow progress.</li>
+            <li>I led a team of four developers, handling UI/UX design, front-end development, and integration planning.
+              This tool improved accountability and enhanced operational efficiency across departments.</li>
           </ul>
+      
+        </article>
+
+        <article class="project">
+          <h1>Drop Time — Final Year Project</h1>
+          <img src="./DropTimePng/Final.png" alt="">
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">Bootstrap</span>
+            <span class="tag">Firebase</span>
+          </div>
+          <ul>
+            <li>Drop Time is a productivity and task-management application built to help users manage schedules,
+              deadlines, and personal routines.</li>
+            <li>It features task categorization, dynamic reminders, and an analytics view that shows daily productivity
+              patterns.</li>
+            <li>The app uses MongoDB for data storage, Firebase for authentication, and React for building a clean,
+              responsive UI.</li>
+            <li>We focused on improving user discipline through optimized UX and time-blocking techniques.
+              It significantly enhances workflow efficiency for students and professionals.</li>
+          </ul>
+      
+        </article>
+      
+        <article class="project">
+          <h1>Tic Tac Toe — Group Project</h1>
+          <img src="./TicTacToePng/TicPresent.png" alt="">
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">System Design</span>
+            <span class="tag">Android Development</span>
+          </div>
+          <ul>
+            <li>This project is a modern take on the classic Tic Tac Toe game, built using React with modular component
+              design.</li>
+            <li>Our team implemented real-time state handling, win-detection logic, and smooth UI animations to enhance
+              the player experience.</li>
+            <li>It supports both single-device multiplayer gameplay and scalable architecture for future online play.
+              We also explored Android adaptation for cross-platform usability.</li>
+            <li>The project demonstrates clean coding practices, teamwork, and fundamental game logic design.</li>
+          </ul>
+         
+        </article>
+      </section>
+
+      <section id="contact" class="card">
+        <h3>Contact</h3>
+        <div class="grid-2">
+          <div>
+            <p class="meta">Open to internships, co-op placements, and full-time roles. Reach out to collaborate or
+              discuss opportunities.</p>
+            <ul style="margin:8px 0 0 18px;color:var(--muted)">
+              <li><strong>Email:</strong> <a href="mailto:ramanisujal314@gmail.com">ramanisujal314@gmail.com</a></li>
+              <li><strong>Phone:</strong> +1 (639) 590-7753</li>
+              <li><strong>Location:</strong> Regina, Saskatchewan</li>
+              <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sujal-ramani/"
+                  target="_blank">linkedin.com/in/sujal-ramani</a></li>
+              <li><strong>GitHub:</strong> <a href="https://github.com/Sujal-Ramani"
+                  target="_blank">github.com/sujalramani</a></li>
+            </ul>
+          </div>
+          <div>
+            <form onsubmit="return handleForm(event)">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@domain.com" required>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="I am interested in..." required></textarea>
+              <button type="submit">Send Message</button>
+            </form>
+          </div>
         </div>
-        <div>
-          <form onsubmit="return handleForm(event)">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" placeholder="Your name" required>
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="you@domain.com" required>
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="I am interested in..." required></textarea>
-            <button type="submit">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <footer>
-    <div>Author: Sujal Ramani • Last edited: November 17, 2025</div>
-    <div>Designed & Built with care — Resume available on request.</div>
-  </footer>
-</div>
+    <footer>
+      <div>Author: Sujal Ramani • Last edited: November 17, 2025</div>
+      <div>Designed & Built with care — Resume available on request.</div>
+    </footer>
+  </div>
 
-<script>
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click', function(e){
-    const href = this.getAttribute('href');
-    if(href.startsWith('#')){ e.preventDefault(); const el=document.querySelector(href); if(el) el.scrollIntoView({behavior:'smooth',block:'start'});}
-  })
-})
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href.startsWith('#')) { e.preventDefault(); const el = document.querySelector(href); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      })
+    })
 
-function handleForm(e){
-  e.preventDefault();
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
-  const subject = encodeURIComponent('Portfolio contact from ' + name);
-  const body = encodeURIComponent('Name: '+name+"\nEmail: "+email+"\n\nMessage:\n"+message);
-  window.location.href = `mailto:ramanisujal314@gmail.com?subject=${subject}&body=${body}`;
-  return false;
-}
+    function handleForm(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const subject = encodeURIComponent('Portfolio contact from ' + name);
+      const body = encodeURIComponent('Name: ' + name + "\nEmail: " + email + "\n\nMessage:\n" + message);
+      window.location.href = `mailto:ramanisujal314@gmail.com?subject=${subject}&body=${body}`;
+      return false;
+    }
 
-// Scroll animations
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{ if(entry.isIntersecting) entry.target.classList.add('visible'); });
-},{threshold:0.2});
-document.querySelectorAll('section').forEach(sec=>observer.observe(sec));
-</script>
+    // Scroll animations
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('section').forEach(sec => observer.observe(sec));
+  </script>
 </body>
+
 </html>
